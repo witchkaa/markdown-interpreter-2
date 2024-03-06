@@ -32,6 +32,7 @@ public class Main {
 
         } catch (ParseException e) {
             System.err.println("Error reading cmd line: " + e.getMessage());
+            System.exit(1);
         }
     }
     private static void writeToFile(String htmlContent, String filename) {

@@ -69,7 +69,8 @@ public class Checker {
             boolean isFirstMatch = firstMarkerMatcher.find();
             boolean isSecondMatch = secondMarkerMatcher.find();
             if (isFirstMatch || isSecondMatch) {
-                throw new Error("Error: invalid markdown (nested tags not allowed). Review your input file and try again.");
+                System.err.println("Error: invalid markdown (nested tags not allowed). Review your input file and try again.");
+                System.exit(1);
             }
         }
     }

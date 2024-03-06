@@ -78,7 +78,8 @@ public class Interpreter {
                 checker.checkForUnbalancedMarkers("```", blueprint) ||
                 checker.checkForUnbalancedMarkers("**", blueprint) ||
                 checker.checkForUnbalancedMarkers("_", blueprint)) {
-            throw new Error("Error: invalid markdown (some markup element was not closed). Review your input file and try again.");
+            System.err.println("Error: invalid markdown (some markup element was not closed). Review your input file and try again.");
+            System.exit(1);
         }
         return markdownContent;
     }
