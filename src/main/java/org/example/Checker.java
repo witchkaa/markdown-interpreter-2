@@ -39,7 +39,7 @@ public class Checker {
                 (idx + markerLength == blueprint.length() || !Character.isLetterOrDigit(blueprint.charAt(idx + markerLength)));
     }
 
-    private boolean isBeforeMatch(String blueprint, int idx, String marker) {
+    private boolean isBeforeMatch(String blueprint, int idx) {
         String regex = "[A-Za-z0-9,\\u0400-\\u04FF]";
         return idx > 0 && Character.toString(blueprint.charAt(idx - 1)).matches(regex);
     }
@@ -60,18 +60,18 @@ public class Checker {
     private boolean isOpenNotClosed(int openPos, int closePos, String blueprint, int idx) {
         return openPos != -1 && closePos == -1 && (blueprint.charAt(idx) == '\n' || idx == blueprint.length() - 1);
     }
-    void checkForNestedMarkers(String firstMarker, String secondMarker, List<String> blocks){
+    public boolean checkForNestedMarkers(String firstMarker, String secondMarker, List<String> blocks){
         Pattern firstMarkerPattern = Pattern.compile(firstMarker, Pattern.DOTALL);
         Pattern secondMarkerPattern = Pattern.compile(secondMarker, Pattern.DOTALL);
+        boolean isFirstMatch = false;
+        boolean isSecondMatch = false;
         for (String b : blocks) {
             Matcher firstMarkerMatcher = firstMarkerPattern.matcher(b);
             Matcher secondMarkerMatcher = secondMarkerPattern.matcher(b);
-            boolean isFirstMatch = firstMarkerMatcher.find();
-            boolean isSecondMatch = secondMarkerMatcher.find();
-            if (isFirstMatch || isSecondMatch) {
-                System.err.println("Error: invalid markdown (nested tags not allowed). Review your input file and try again.");
-                System.exit(1);
-            }
+            isFirstMatch = firstMarkerMatcher.find();
+            isSecondMatch = secondMarkerMatcher.find();
+            if (isFirstMatch || isSecondMatch) break;
         }
+        return isFirstMatch || isSecondMatch;
     }
 }

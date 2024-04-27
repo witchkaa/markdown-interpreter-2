@@ -52,10 +52,13 @@ public class Interpreter {
         List<String> monospacedBlocks = getMatchPatternList(findMonosp, markdownContent);
 
         Checker checker = new Checker();
-        checker.checkForNestedMarkers(findItalic, findMonosp, boldBlocks);
-        checker.checkForNestedMarkers(findBold, findItalic, monospacedBlocks);
-        checker.checkForNestedMarkers(findBold, findMonosp, italicBlocks);
-
+        boolean firstCheck = checker.checkForNestedMarkers(findItalic, findMonosp, boldBlocks);
+        boolean secondCheck = checker.checkForNestedMarkers(findBold, findItalic, monospacedBlocks);
+        boolean thirdCheck = checker.checkForNestedMarkers(findBold, findMonosp, italicBlocks);
+        if (firstCheck || secondCheck || thirdCheck) {
+            System.err.println("Error: invalid markdown (nested tags not allowed). Review your input file and try again.");
+            System.exit(1);
+        }
         markdownContent = markdownContent.replaceAll(findBold, "<b>$1</b>");
         blueprint = blueprint.replaceAll(findBold, "boldBlock");
         markdownContent = markdownContent.replaceAll(findItalic, "<i>$1</i>");
