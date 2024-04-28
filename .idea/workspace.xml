@@ -10,11 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eb707dc-44be-4c0a-807c-72b77a6d5367" name="Changes" comment="Refactor and add tests for Checker">
+      <change afterPath="$PROJECT_DIR$/src/main/test/file.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Checker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Checker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/InterpreterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/InterpreterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,51 +68,51 @@
       <recent name="C:\Users\User\markdown-interpreter2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.InterpreterTest.testConvertMarkdownToHtml2">
-    <configuration name="InterpreterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MainTest">
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="markdown-interpreter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTest" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTest.testConvertMarkdownToHtml2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainTest.testConvertMarkdownToHtmlMissingDestFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="markdown-interpreter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTest" />
-      <option name="METHOD_NAME" value="testConvertMarkdownToHtml2" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlMissingDestFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTest.testConvertMarkdownToHtmlEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainTest.testConvertMarkdownToHtmlOK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="markdown-interpreter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTest" />
-      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlEmpty" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlOK" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTest.testConvertMarkdownToHtmlWithNestedMarkers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainTest.testConvertMarkdownToHtmlOutputFileOption" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="markdown-interpreter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTest" />
-      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlWithNestedMarkers" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlOutputFileOption" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InterpreterTest.testConvertMarkdownToHtmlWithUnbalancedMarkers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainTest.testConvertMarkdownToHtml_OutputFileOption" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="markdown-interpreter" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InterpreterTest" />
-      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlWithUnbalancedMarkers" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="testConvertMarkdownToHtml_OutputFileOption" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InterpreterTest.testConvertMarkdownToHtml2" />
-        <item itemvalue="JUnit.InterpreterTest.testConvertMarkdownToHtmlEmpty" />
-        <item itemvalue="JUnit.InterpreterTest" />
-        <item itemvalue="JUnit.InterpreterTest.testConvertMarkdownToHtmlWithUnbalancedMarkers" />
-        <item itemvalue="JUnit.InterpreterTest.testConvertMarkdownToHtmlWithNestedMarkers" />
+        <item itemvalue="JUnit.MainTest" />
+        <item itemvalue="JUnit.MainTest.testConvertMarkdownToHtmlOK" />
+        <item itemvalue="JUnit.MainTest.testConvertMarkdownToHtmlMissingDestFile" />
+        <item itemvalue="JUnit.MainTest.testConvertMarkdownToHtml_OutputFileOption" />
+        <item itemvalue="JUnit.MainTest.testConvertMarkdownToHtmlOutputFileOption" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +146,7 @@
       <workItem from="1714216332541" duration="601000" />
       <workItem from="1714221924562" duration="5032000" />
       <workItem from="1714249661589" duration="4035000" />
-      <workItem from="1714321008864" duration="2561000" />
+      <workItem from="1714321008864" duration="5493000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor and add tests for Checker">
       <created>1714250515676</created>
