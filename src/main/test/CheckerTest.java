@@ -16,7 +16,7 @@ class CheckerTest {
     @Test
     void testCheckForUnbalancedMarkersUnbalanced() {
         Checker checker = new Checker();
-        assertTrue(checker.checkForUnbalancedMarkers("**", "**text**"));
+        assertTrue(checker.checkForUnbalancedMarkers("**", "**text*"));
     }
     @Test
     void testCheckForUnbalancedMarkersNoMarkers() {

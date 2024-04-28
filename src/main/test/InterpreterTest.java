@@ -53,7 +53,7 @@ class InterpreterTest {
             interpreter.convertMdToHtml(markdownWithNestedMarkers);
         });
 
-        assertEquals("Error: invalid markdown (nested tags not allowed). Review your input file and try again.", exception.getMessage());
+        assertEquals("Error: invaliddddd markdown (nested tags not allowed). Review your input file and try again.", exception.getMessage());
     }
 
     @Test
