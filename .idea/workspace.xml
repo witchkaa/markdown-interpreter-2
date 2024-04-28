@@ -10,9 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eb707dc-44be-4c0a-807c-72b77a6d5367" name="Changes" comment="Refactor and add tests for Checker">
-      <change afterPath="$PROJECT_DIR$/src/main/test/file.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +145,7 @@
       <workItem from="1714216332541" duration="601000" />
       <workItem from="1714221924562" duration="5032000" />
       <workItem from="1714249661589" duration="4035000" />
-      <workItem from="1714321008864" duration="5493000" />
+      <workItem from="1714321008864" duration="6853000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor and add tests for Checker">
       <created>1714250515676</created>
