@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Interpreter {
-    public String convert(String sourceFile) {
+    public String convert(String sourceFile) throws Exception {
         String md = readMarkdownFile(sourceFile);
         return convertMdToHtml(md);
     }
@@ -25,7 +25,7 @@ public class Interpreter {
         }
         return content.toString();
     }
-    public String convertMdToHtml(String markdownContent) {
+    public String convertMdToHtml(String markdownContent){
         List<String> mdBlocks = new ArrayList<>();
 
         Pattern pattern = Pattern.compile("(?m)(^\\n?|^)```(.*?)```(\\n?|$)", Pattern.DOTALL);
@@ -56,8 +56,7 @@ public class Interpreter {
         boolean secondCheck = checker.checkForNestedMarkers(findBold, findItalic, monospacedBlocks);
         boolean thirdCheck = checker.checkForNestedMarkers(findBold, findMonosp, italicBlocks);
         if (firstCheck || secondCheck || thirdCheck) {
-            System.err.println("Error: invalid markdown (nested tags not allowed). Review your input file and try again.");
-            System.exit(1);
+            throw new IllegalStateException("Error: invalid markdown (nested tags not allowed). Review your input file and try again.");
         }
         markdownContent = markdownContent.replaceAll(findBold, "<b>$1</b>");
         blueprint = blueprint.replaceAll(findBold, "boldBlock");
@@ -69,8 +68,8 @@ public class Interpreter {
         String[] paragraphs = markdownContent.split("\n{2,}");
         StringBuilder builder = new StringBuilder();
         for (String paragraph : paragraphs) {
-            if (!paragraph.isEmpty()) {
-                builder.append("<p>").append(paragraph).append("</p>\n");
+            if (!paragraph.trim().isEmpty()) {
+                builder.append("<p>").append(paragraph.trim()).append("</p>\n");
             }
         }
         markdownContent = builder.toString();
@@ -81,8 +80,7 @@ public class Interpreter {
                 checker.checkForUnbalancedMarkers("```", blueprint) ||
                 checker.checkForUnbalancedMarkers("**", blueprint) ||
                 checker.checkForUnbalancedMarkers("_", blueprint)) {
-            System.err.println("Error: invalid markdown (some markup element was not closed). Review your input file and try again.");
-            System.exit(1);
+            throw new IllegalArgumentException("Error: invalid markdown (some markup element was not closed). Review your input file and try again.");
         }
         return markdownContent;
     }

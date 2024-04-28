@@ -39,7 +39,7 @@ public class Checker {
                 (idx + markerLength == blueprint.length() || !Character.isLetterOrDigit(blueprint.charAt(idx + markerLength)));
     }
 
-    private boolean isBeforeMatch(String blueprint, int idx) {
+    private boolean isBeforeMatch(String blueprint, int idx, String marker) {
         String regex = "[A-Za-z0-9,\\u0400-\\u04FF]";
         return idx > 0 && Character.toString(blueprint.charAt(idx - 1)).matches(regex);
     }

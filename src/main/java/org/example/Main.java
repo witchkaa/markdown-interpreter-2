@@ -30,7 +30,13 @@ public class Main {
                 System.out.println(htmlContent);
             }
 
-        } catch (ParseException e) {
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: invalid markdown (some markup element was not closed). Review your input file and try again.");
+            System.exit(1);
+        } catch (IllegalStateException e) {
+            System.err.println("Error: invalid markdown (nested tags not allowed). Review your input file and try again.");
+            System.exit(1);
+        } catch (Exception e) {
             System.err.println("Error reading cmd line: " + e.getMessage());
             System.exit(1);
         }
