@@ -11,7 +11,7 @@ public class Main {
         Interpreter interpreter = new Interpreter();
 
         options.addOption("o", "out", true, "Path to result HTML file");
-
+        options.addOption("f", "format", true, "Output format (ansi or html)");
         CommandLineParser parser = new DefaultParser();
         try {
             CommandLine cmd = parser.parse(options, args);
@@ -21,7 +21,11 @@ public class Main {
                 System.err.println("Please provide the path to source file.");
                 return;
             }
-            String htmlContent = interpreter.convert(remainingArgs[0]);
+            String format = "ansi"; //default
+            if (cmd.hasOption("f")) {
+                format = cmd.getOptionValue("f");
+            }
+            String htmlContent = interpreter.convert(remainingArgs[0], format);
 
             if (cmd.hasOption("o")) {
                 String outputFile = cmd.getOptionValue("o");

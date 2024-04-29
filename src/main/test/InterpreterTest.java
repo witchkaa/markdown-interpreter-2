@@ -14,7 +14,7 @@ class InterpreterTest {
         String markdownContent = "This is a **bold** text. This is an _italic_ text.";
         Path tempFile = Files.createTempFile("test", ".md");
         Files.writeString(tempFile, markdownContent);
-        String htmlOutput = interpreter.convert(tempFile.toString());
+        String htmlOutput = interpreter.convert(tempFile.toString(), "html");
         assertEquals("<p>This is a <b>bold</b> text. This is an <i>italic</i> text.</p>\n", htmlOutput);
         Files.deleteIfExists(tempFile);
     }
@@ -27,7 +27,7 @@ class InterpreterTest {
                 ```This **text** is _preformatted_ so it `won't` change```""";
         Path tempFile = Files.createTempFile("test", ".md");
         Files.writeString(tempFile, markdownContent);
-        String htmlOutput = interpreter.convert(tempFile.toString());
+        String htmlOutput = interpreter.convert(tempFile.toString(), "html");
         assertEquals("""
                 <p>This is a <b>bold</b> text. This is an <i>italic</i> text. Here is <tt>monospaced</tt>.</p>
                 <p><pre>This **text** is _preformatted_ so it `won't` change</pre></p>
@@ -40,7 +40,7 @@ class InterpreterTest {
         String markdownContent = "";
         Path tempFile = Files.createTempFile("test", ".md");
         Files.writeString(tempFile, markdownContent);
-        String htmlOutput = interpreter.convert(tempFile.toString());
+        String htmlOutput = interpreter.convert(tempFile.toString(), "html");
         assertEquals("", htmlOutput);
         Files.deleteIfExists(tempFile);
     }
@@ -50,7 +50,7 @@ class InterpreterTest {
         String markdownWithNestedMarkers = "Some **bold _and_ italic** text.";
 
         Throwable exception = assertThrows(IllegalStateException.class, () -> {
-            interpreter.convertMdToHtml(markdownWithNestedMarkers);
+            interpreter.convertMdToHtml(markdownWithNestedMarkers, "html");
         });
 
         assertEquals("Error: invalid markdown (nested tags not allowed). Review your input file and try again.", exception.getMessage());
@@ -62,9 +62,11 @@ class InterpreterTest {
         String markdownWithUnbalancedMarkers = "**Unbalanced *markers";
 
         Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
-            interpreter.convertMdToHtml(markdownWithUnbalancedMarkers);
+            interpreter.convertMdToHtml(markdownWithUnbalancedMarkers, "html");
         });
 
         assertEquals("Error: invalid markdown (some markup element was not closed). Review your input file and try again.", exception.getMessage());
     }
 }
+
+
