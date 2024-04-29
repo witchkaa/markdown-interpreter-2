@@ -9,8 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb707dc-44be-4c0a-807c-72b77a6d5367" name="Changes" comment="Refactor and add tests for Checker">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
+    <list default="true" id="5eb707dc-44be-4c0a-807c-72b77a6d5367" name="Changes" comment="Break test after CI fix">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="testbr" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -67,7 +72,47 @@
       <recent name="C:\Users\User\markdown-interpreter2" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest">
+  <component name="RunManager" selected="JUnit.InterpreterTest.testConvertMarkdownToHtmlWithUnbalancedMarkers">
+    <configuration name="CheckerTest.testCheckForNestedMarkersNested" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="markdown-interpreter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CheckerTest" />
+      <option name="METHOD_NAME" value="testCheckForNestedMarkersNested" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckerTest.testCheckForUnbalancedMarkersUnbalanced" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="markdown-interpreter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CheckerTest" />
+      <option name="METHOD_NAME" value="testCheckForUnbalancedMarkersUnbalanced" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterpreterTest.testConvertMarkdownToHtmlWithNestedMarkers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="markdown-interpreter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InterpreterTest" />
+      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlWithNestedMarkers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InterpreterTest.testConvertMarkdownToHtmlWithUnbalancedMarkers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="markdown-interpreter" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InterpreterTest" />
+      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlWithUnbalancedMarkers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="markdown-interpreter" />
       <option name="PACKAGE_NAME" value="" />
@@ -77,53 +122,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.testConvertMarkdownToHtmlMissingDestFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="markdown-interpreter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlMissingDestFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest.testConvertMarkdownToHtmlOK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="markdown-interpreter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlOK" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest.testConvertMarkdownToHtmlOutputFileOption" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="markdown-interpreter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="testConvertMarkdownToHtmlOutputFileOption" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainTest.testConvertMarkdownToHtml_OutputFileOption" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="markdown-interpreter" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="testConvertMarkdownToHtml_OutputFileOption" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.MainTest" />
-        <item itemvalue="JUnit.MainTest.testConvertMarkdownToHtmlOK" />
-        <item itemvalue="JUnit.MainTest.testConvertMarkdownToHtmlMissingDestFile" />
-        <item itemvalue="JUnit.MainTest.testConvertMarkdownToHtml_OutputFileOption" />
-        <item itemvalue="JUnit.MainTest.testConvertMarkdownToHtmlOutputFileOption" />
+        <item itemvalue="JUnit.InterpreterTest.testConvertMarkdownToHtmlWithUnbalancedMarkers" />
+        <item itemvalue="JUnit.InterpreterTest.testConvertMarkdownToHtmlWithNestedMarkers" />
+        <item itemvalue="JUnit.CheckerTest.testCheckForUnbalancedMarkersUnbalanced" />
+        <item itemvalue="JUnit.CheckerTest.testCheckForNestedMarkersNested" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +150,8 @@
       <workItem from="1714216332541" duration="601000" />
       <workItem from="1714221924562" duration="5032000" />
       <workItem from="1714249661589" duration="4035000" />
-      <workItem from="1714321008864" duration="6853000" />
+      <workItem from="1714321008864" duration="9210000" />
+      <workItem from="1714333668926" duration="675000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor and add tests for Checker">
       <created>1714250515676</created>
@@ -154,7 +160,56 @@
       <option name="project" value="LOCAL" />
       <updated>1714250515676</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add build file for CI">
+      <created>1714329541879</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714329541879</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix build file for CI">
+      <created>1714329643448</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714329643448</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix JDK version">
+      <created>1714329938247</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714329938247</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Break test">
+      <created>1714330059572</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714330059572</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Break test after CI fix">
+      <created>1714330262507</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714330262507</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Break test after CI fix">
+      <created>1714330639526</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714330639526</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Break test after CI fix">
+      <created>1714330776369</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714330776369</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +228,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor and add tests for Checker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor and add tests for Checker" />
+    <MESSAGE value="Add build file for CI" />
+    <MESSAGE value="Fix build file for CI" />
+    <MESSAGE value="Fix JDK version" />
+    <MESSAGE value="Break test" />
+    <MESSAGE value="Break test after CI fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Break test after CI fix" />
   </component>
 </project>
