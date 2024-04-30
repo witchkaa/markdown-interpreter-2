@@ -42,21 +42,12 @@ public class Interpreter {
             matcher.appendReplacement(stringBuilder, Matcher.quoteReplacement(replacement));
         }
         matcher.appendTail(stringBuilder);
+        markdownContent = stringBuilder.toString();
         String blueprint = markdownContent;
+        Checker checker = new Checker();
         String findBold = "(?<![\\w`*\u0400-\u04FF])\\*\\*(\\S(?:.*?\\S)?)\\*\\*(?![\\w`*\u0400-\u04FF])";
         String findItalic = "(?<![\\w`*\\u0400-\\u04FF])_(\\S(?:.*?\\S)?)_(?![\\w`*\\u0400-\\u04FF])";
         String findMonosp = "(?<![\\w`*\\u0400-\\u04FF])`(\\S(?:.*?\\S)?)`(?![\\w`*\\u0400-\\u04FF])";
-        blueprint = blueprint.replaceAll(findBold, "boldBlock");
-        blueprint = blueprint.replaceAll(findItalic, "italicBlock");
-        blueprint = blueprint.replaceAll(findMonosp, "monospacedBlock");
-        Checker checker = new Checker();
-        if (checker.checkForUnbalancedMarkers("`", blueprint) ||
-                checker.checkForUnbalancedMarkers("```", blueprint) ||
-                checker.checkForUnbalancedMarkers("**", blueprint) ||
-                checker.checkForUnbalancedMarkers("_", blueprint)) {
-            throw new IllegalArgumentException("Error: invalid markdown (some markup element was not closed). Review your input file and try again.");
-        }
-
         List<String> boldBlocks = getMatchPatternList(findBold, markdownContent);
         List<String> italicBlocks = getMatchPatternList(findItalic, markdownContent);
         List<String> monospacedBlocks = getMatchPatternList(findMonosp, markdownContent);
@@ -67,6 +58,17 @@ public class Interpreter {
         if (firstCheck || secondCheck || thirdCheck) {
             throw new IllegalStateException("Error: invalid markdown (nested tags not allowed). Review your input file and try again.");
         }
+        blueprint = blueprint.replaceAll(findBold, "boldBlock");
+        blueprint = blueprint.replaceAll(findItalic, "italicBlock");
+        blueprint = blueprint.replaceAll(findMonosp, "monospacedBlock");
+        if (checker.checkForUnbalancedMarkers("`", blueprint) ||
+                checker.checkForUnbalancedMarkers("```", blueprint) ||
+                checker.checkForUnbalancedMarkers("**", blueprint) ||
+                checker.checkForUnbalancedMarkers("_", blueprint)) {
+            throw new IllegalArgumentException("Error: invalid markdown (some markup element was not closed). Review your input file and try again.");
+        }
+
+
 
         String htmlContent = markdownContent;
         if (format.equals("html")) {

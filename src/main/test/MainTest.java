@@ -28,7 +28,7 @@ class MainTest {
 
         Main.main(args);
         String consoleOutput = outContent.toString().trim();
-        assertEquals("<p>this file was created for <b>testing</b> purposes</p>", consoleOutput);
+        assertEquals("this file was created for \u001B[1mtesting\u001B[22m purposes", consoleOutput);
     }
     @Test
     void testConvertMarkdownToHtmlOutputFileOption() {
