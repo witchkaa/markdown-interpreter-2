@@ -24,6 +24,10 @@ public class Main {
             String format = "ansi"; //default
             if (cmd.hasOption("f")) {
                 format = cmd.getOptionValue("f");
+            } else {
+                if (cmd.hasOption("o")) {
+                    format = "html";
+                }
             }
             String htmlContent = interpreter.convert(remainingArgs[0], format);
 
