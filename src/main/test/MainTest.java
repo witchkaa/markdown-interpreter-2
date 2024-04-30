@@ -20,7 +20,7 @@ class MainTest {
         assertEquals("Please provide the path to source file.", printedOutput);
     }
     @Test
-    void testConvertMarkdownToHtmlOK() {
+    void testConvertMarkdownNoFlags() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
         String sourceFilePath = "src/main/test/file.md";
@@ -30,6 +30,7 @@ class MainTest {
         String consoleOutput = outContent.toString().trim();
         assertEquals("this file was created for \u001B[1mtesting\u001B[22m purposes", consoleOutput);
     }
+
     @Test
     void testConvertMarkdownToHtmlOutputFileOption() {
         String sourceFilePath = "src/main/test/file.md";
